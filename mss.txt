@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.lang.Math;
+public class Example
+{
+      int maxSS(int arr[],int n)
+      {
+          int ans=0,sum=0;
+          for(int i=0;i<n;i++)
+          {
+              if(sum+arr[i]>0)
+              sum=sum+arr[i];
+              
+              else
+              {
+                  sum=0;
+              }
+              ans=Math.max(ans,sum);
+          }
+          return ans;
+      }
+      
+      public static void main(String[]args)
+      {
+          Example obj=new Example();
+          System.out.println("plz enter size of array");
+          Scanner c=new Scanner(System.in);
+          int n=c.nextInt();
+          int arr[]=new int[n];
+          for(int i=0;i<n;i++)
+          {
+              arr[i]=c.nextInt();
+          }
+          System.out.println("Max contiguous sum is:"+obj.maxSS(arr,n));
+      }
+            
+}
